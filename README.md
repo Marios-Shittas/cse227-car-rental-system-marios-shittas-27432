@@ -2,8 +2,17 @@
 
 Semester project for `CSE227`.
 
-This is a console-based Java application for managing a car rental company.  
+This project is a console-based Java application for managing a car rental company.  
 It supports vehicles, customers, rentals, invoice printing, file storage, loyalty points, and maintenance tracking.
+
+## Online presentation
+
+Project presentation / report website:
+
+**https://marios-shittas.github.io/cse227-car-rental-system-marios-shittas-27432/**
+
+This is the web presentation of the project, not the Java application itself.  
+It was created as an online report/presentation page so the lecturer and other visitors can view the system overview, design, structure, and main functionality through a public URL.
 
 ## How to run
 
@@ -36,8 +45,8 @@ java -cp out Main
 
 - `src/` contains the Java source files
 - `data/` contains the text files used for storage
+- `docs/` contains the web presentation used for GitHub Pages
 - `out/` contains compiled class files
-- `report-site/` contains the small report website
 
 ## Notes
 
