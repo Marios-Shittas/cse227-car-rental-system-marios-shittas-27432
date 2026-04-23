@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Management System - Αναφορά Εργασίας</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-dot"></span>
+            <span>Car Rental Report Site</span>
+        </div>
+        <a class="topbar-link" href="#file-structure">Δομή Project</a>
+    </header>
+
+    <div class="page-shell">
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <p class="sidebar-kicker">Περιεχόμενα</p>
+                <nav class="side-nav">
+                    <a href="#hero">Αρχική</a>
+                    <a href="#introduction">Εισαγωγή</a>
+                    <a href="#goals">Στόχοι Εργασίας</a>
+                    <a href="#oop-design">Αντικειμενοστραφής Σχεδίαση</a>
+                    <a href="#classes">Κύριες Κλάσεις</a>
+                    <a href="#oop-principles">Αρχές OOP</a>
+                    <a href="#persistence">Αποθήκευση Δεδομένων</a>
+                    <a href="#file-structure">Δομή Αρχείων</a>
+                    <a href="#main-menu">Κεντρικό Μενού</a>
+                    <a href="#exceptions">Εξαιρέσεις</a>
+                    <a href="#rental-flow">Ροή Ενοικίασης</a>
+                    <a href="#loyalty">Σύστημα Πιστότητας</a>
+                    <a href="#bonus">Bonus Extension</a>
+                    <a href="#decisions">Σχεδιαστικές Αποφάσεις</a>
+                    <a href="#conclusion">Συμπεράσματα</a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section id="hero" class="hero reveal">
+                <div class="hero-copy">
+                    <p class="eyebrow">Αναφορά Εργασίας Java</p>
+                    <h1>Car Rental Management System</h1>
+                    <p class="hero-text">
+                        Στατική ιστοσελίδα παρουσίασης για την πανεπιστημιακή εργασία ανάπτυξης ενός
+                        συστήματος διαχείρισης ενοικιάσεων αυτοκινήτων με χρήση Java, αρχών OOP,
+                        αποθήκευσης σε αρχεία txt και bonus επέκτασης για χιλιόμετρα και συντήρηση.
+                    </p>
+                </div>
+
+                <div class="hero-meta">
+                    <div class="meta-card">
+                        <span class="meta-label">Φοιτητής</span>
+                        <strong>Μάριος Σιήττας</strong>
+                        <span class="meta-label">Α.Φ.Τ: 27432</span>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Μάθημα</span>
+                        <strong>CSE227 - Java / OOP</strong>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Διδάσκων</span>
+                        <strong>κ. Παναγιώτης Ηλία</strong>
+                    </div>
+                    <div class="meta-card">
+                        <span class="meta-label">Τύπος Εργασίας</span>
+                        <strong>Console Application</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stats reveal">
+                <article class="stat-card">
+                    <span class="stat-number">4</span>
+                    <p>Κατηγορίες οχημάτων</p>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-number">TXT / CSV</span>
+                    <p>Αποθήκευση δεδομένων σε αρχεία</p>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-number">OOP</span>
+                    <p>Ενθυλάκωση, αφαίρεση, κληρονομικότητα, πολυμορφισμός, χρήση διεπαφής</p>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-number">Bonus</span>
+                    <p>Χιλιόμετρα, service, maintenance availability</p>
+                </article>
+            </section>
+
+            <section id="introduction" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">01</p>
+                    <h2>Εισαγωγή</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Η εργασία αφορά την ανάπτυξη ενός ολοκληρωμένου συστήματος για γραφείο ενοικίασης
+                        αυτοκινήτων. Το σύστημα υλοποιήθηκε ως console εφαρμογή σε Java και σχεδιάστηκε
+                        ώστε να υποστηρίζει διαχείριση οχημάτων, πελατών, ενοικιάσεων, ιστορικού,
+                        τιμολογίων, διαθεσιμότητας και loyalty points.
+                    </p>
+                    <p>
+                        Παράλληλα, υλοποιήθηκε και η bonus επέκταση, στην οποία το κάθε όχημα παρακολουθεί
+                        τα συνολικά χιλιόμετρα και προγραμματίζεται αυτόματα συντήρηση όταν ξεπερνά το
+                        αντίστοιχο όριο. Η διαθεσιμότητα ενός οχήματος επηρεάζεται τόσο από ενεργές
+                        ενοικιάσεις όσο και από maintenance periods.
+                    </p>
+                </div>
+            </section>
+
+            <section id="goals" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">02</p>
+                    <h2>Στόχοι Εργασίας</h2>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card bullet-card">
+                        <h3>Λειτουργικοί στόχοι</h3>
+                        <ul>
+                            <li>Καταχώριση και διαγραφή οχημάτων.</li>
+                            <li>Καταχώριση και αναζήτηση πελατών.</li>
+                            <li>Δημιουργία ενοικίασης με έξτρα υπηρεσίες.</li>
+                            <li>Αυτόματη δημιουργία και επανεκτύπωση invoice.</li>
+                            <li>Έλεγχος διαθεσιμότητας ανά ημερομηνία ή περίοδο.</li>
+                            <li>Προβολή ιστορικού πελατών και οχημάτων.</li>
+                        </ul>
+                    </article>
+                    <article class="card bullet-card">
+                        <h3>Τεχνικοί στόχοι</h3>
+                        <ul>
+                            <li>Χρήση αρχών αντικειμενοστραφούς προγραμματισμού.</li>
+                            <li>Αποθήκευση δεδομένων σε txt αρχεία με σχετική σύνδεση IDs.</li>
+                            <li>Χρήση LocalDate για όλες τις ημερομηνίες.</li>
+                            <li>Χειρισμός λαθών με built-in και custom exceptions.</li>
+                            <li>Υποστήριξη bonus λογικής για χιλιόμετρα και συντήρηση.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="oop-design" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">03</p>
+                    <h2>Αντικειμενοστραφής Σχεδίαση</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Η εφαρμογή ακολουθεί modular σχεδίαση με ξεκάθαρο διαχωρισμό ανάμεσα σε domain
+                        classes, manager classes, utility classes και custom exceptions. Με αυτόν τον τρόπο,
+                        η λογική του προγράμματος δεν συγκεντρώνεται στη <code>Main</code>, αλλά
+                        κατανέμεται σε μικρότερες, πιο κατανοητές μονάδες.
+                    </p>
+                </div>
+                <div class="grid three-columns">
+                    <article class="card mini-card">
+                        <h3>Domain Model</h3>
+                        <p>Vehicle, Customer, Rental, LoyaltyAccount, MaintenanceRecord.</p>
+                    </article>
+                    <article class="card mini-card">
+                        <h3>Managers</h3>
+                        <p>VehicleManager, CustomerManager, RentalManager, MaintenanceManager.</p>
+                    </article>
+                    <article class="card mini-card">
+                        <h3>Utilities</h3>
+                        <p>DataManager, DateUtils, IdGenerator, InputHelper.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="classes" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">04</p>
+                    <h2>Κύριες Κλάσεις και Ρόλοι</h2>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card">
+                        <h3>Vehicle / Υποκλάσεις</h3>
+                        <p>
+                            Η <code>Vehicle</code> είναι abstract class και περιέχει τα κοινά πεδία όλων των
+                            οχημάτων. Οι κλάσεις <code>EconomyCar</code>, <code>SUV</code>,
+                            <code>Convertible</code> και <code>LuxuryCar</code> κληρονομούν από αυτήν
+                            και ορίζουν rate και seat validation ανά κατηγορία.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Bookable</h3>
+                        <p>
+                            Το <code>Bookable</code> είναι interface και δηλώνει κοινή συμπεριφορά σχετική με
+                            booking και availability. Όλα τα οχήματα το υποστηρίζουν μέσω της
+                            <code>Vehicle</code>.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Customer / LoyaltyAccount</h3>
+                        <p>
+                            Η <code>Customer</code> αποθηκεύει τα στοιχεία του πελάτη, ενώ η
+                            <code>LoyaltyAccount</code> διαχειρίζεται loyalty card number, points,
+                            redemption logic και earned points μετά την πληρωμή.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Rental / MaintenanceRecord</h3>
+                        <p>
+                            Η <code>Rental</code> κρατά τις ημερομηνίες, το κόστος, τις έξτρα υπηρεσίες,
+                            το invoice snapshot και το status. Η <code>MaintenanceRecord</code> κρατά
+                            ιστορικό service και maintenance periods για το bonus μέρος.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="oop-principles" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">05</p>
+                    <h2>Αρχές OOP που Χρησιμοποιήθηκαν</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Στην εργασία δόθηκε ιδιαίτερη έμφαση στην πρακτική εφαρμογή των βασικών αρχών
+                        του αντικειμενοστραφούς προγραμματισμού. Πιο συγκεκριμένα, η αφαίρεση
+                        υλοποιείται μέσω της abstract κλάσης <code>Vehicle</code>, η κληρονομικότητα
+                        μέσω των υποκλάσεων <code>EconomyCar</code>, <code>SUV</code>,
+                        <code>Convertible</code> και <code>LuxuryCar</code>, ο πολυμορφισμός μέσω
+                        διαχείρισης διαφορετικών τύπων οχημάτων με references τύπου
+                        <code>Vehicle</code>, η ενθυλάκωση μέσω private πεδίων και controlled access,
+                        ενώ η χρήση interface επιτυγχάνεται μέσω του <code>Bookable</code>.
+                    </p>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card concept-card">
+                        <h3>Encapsulation</h3>
+                        <p>
+                            Τα περισσότερα πεδία είναι private και προσπελάζονται μέσω μεθόδων.
+                            Έτσι προστατεύεται η εσωτερική κατάσταση των αντικειμένων και γίνεται
+                            ελεγχόμενη ενημέρωση των δεδομένων.
+                        </p>
+                    </article>
+                    <article class="card concept-card">
+                        <h3>Inheritance</h3>
+                        <p>
+                            Οι τέσσερις κατηγορίες οχημάτων κληρονομούν από την <code>Vehicle</code>,
+                            ώστε να επαναχρησιμοποιούνται κοινά πεδία και μέθοδοι.
+                        </p>
+                    </article>
+                    <article class="card concept-card">
+                        <h3>Abstraction</h3>
+                        <p>
+                            Η <code>Vehicle</code> είναι abstract class, επειδή δεν χρειαζόμαστε generic
+                            object “Vehicle”, αλλά συγκεκριμένους τύπους οχημάτων με διαφορετική συμπεριφορά.
+                        </p>
+                    </article>
+                    <article class="card concept-card">
+                        <h3>Polymorphism</h3>
+                        <p>
+                            Το σύστημα δουλεύει με references τύπου <code>Vehicle</code>,
+                            ενώ στην πράξη διαχειρίζεται αντικείμενα υποκλάσεων όπως
+                            <code>SUV</code> ή <code>LuxuryCar</code>.
+                        </p>
+                    </article>
+                    <article class="card concept-card">
+                        <h3>Interface Usage</h3>
+                        <p>
+                            Το <code>Bookable</code> δηλώνει το κοινό contract για availability checking
+                            και cost access. Έτσι η booking λογική είναι συνεπής για όλα τα οχήματα.
+                        </p>
+                    </article>
+                    <article class="card concept-card">
+                        <h3>Συνδυασμένη χρήση</h3>
+                        <p>
+                            Οι παραπάνω αρχές δεν χρησιμοποιούνται απομονωμένα, αλλά συνεργάζονται σε όλο
+                            το project, ώστε η εφαρμογή να παραμένει καθαρή, κατανοητή και εύκολη
+                            στην παρουσίαση.
+                        </p>
+                    </article>
+                </div>
+                <div class="card bullet-card">
+                    <h3>Συγκεκριμένη εφαρμογή τεχνικών στον κώδικα</h3>
+                    <ul>
+                        <li><strong>Abstraction:</strong> η <code>Vehicle</code> χρησιμοποιείται ως κοινή abstract βάση για όλα τα οχήματα.</li>
+                        <li><strong>Inheritance:</strong> οι κλάσεις <code>EconomyCar</code>, <code>SUV</code>, <code>Convertible</code> και <code>LuxuryCar</code> επεκτείνουν τη <code>Vehicle</code>.</li>
+                        <li><strong>Polymorphism:</strong> το σύστημα χειρίζεται τα οχήματα γενικά ως <code>Vehicle</code>, ανεξάρτητα από τον πραγματικό υποτύπο τους.</li>
+                        <li><strong>Encapsulation:</strong> τα δεδομένα πελατών, οχημάτων και ενοικιάσεων προστατεύονται μέσα στις αντίστοιχες κλάσεις.</li>
+                        <li><strong>Interface:</strong> το <code>Bookable</code> ορίζει ενιαία συμπεριφορά για availability και booking-related λειτουργίες.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="persistence" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">06</p>
+                    <h2>Σχεδίαση Αποθήκευσης Δεδομένων</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Τα δεδομένα αποθηκεύονται σε απλά αρχεία txt με pipe-separated μορφή. Η επιλογή
+                        αυτή έγινε για να ικανοποιηθεί η απαίτηση της εργασίας για file persistence χωρίς
+                        χρήση βάσης δεδομένων. Το σύστημα φορτώνει τα δεδομένα στην εκκίνηση και κάνει
+                        save αμέσως μετά από κάθε αλλαγή.
+                    </p>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card bullet-card">
+                        <h3>Αρχεία δεδομένων</h3>
+                        <ul>
+                            <li><code>data/vehicles.txt</code></li>
+                            <li><code>data/customers.txt</code></li>
+                            <li><code>data/rentals.txt</code></li>
+                            <li><code>data/maintenance.txt</code></li>
+                        </ul>
+                    </article>
+                    <article class="card bullet-card">
+                        <h3>Λογική σύνδεσης</h3>
+                        <ul>
+                            <li>Τα rentals αποθηκεύουν customerId και registration number.</li>
+                            <li>Δεν γίνεται nested object serialization.</li>
+                            <li>Κατά το startup πρώτα φορτώνονται vehicles και customers.</li>
+                            <li>Έπειτα επανασυνδέονται rentals και maintenance records.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="file-structure" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">07</p>
+                    <h2>Δομή Αρχείων του Project</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Η εφαρμογή οργανώθηκε σε καθαρή δομή φακέλων ώστε να είναι εύκολο να ανοίξει,
+                        να εκτελεστεί και να αξιολογηθεί σε περιβάλλον IntelliJ ή Visual Studio Code.
+                    </p>
+                    <pre class="structure-block"><code>CarRentalSystem/
+├── src/
+│   ├── Main.java
+│   ├── Bookable.java
+│   ├── Vehicle.java
+│   ├── EconomyCar.java
+│   ├── SUV.java
+│   ├── Convertible.java
+│   ├── LuxuryCar.java
+│   ├── Customer.java
+│   ├── LoyaltyAccount.java
+│   ├── Rental.java
+│   ├── MaintenanceRecord.java
+│   ├── ExtraService.java
+│   ├── RentalStatus.java
+│   ├── VehicleManager.java
+│   ├── CustomerManager.java
+│   ├── RentalManager.java
+│   ├── MaintenanceManager.java
+│   ├── DataManager.java
+│   ├── InputHelper.java
+│   ├── IdGenerator.java
+│   ├── DateUtils.java
+│   ├── CustomerNotFoundException.java
+│   ├── DuplicateVehicleException.java
+│   ├── DuplicateCustomerException.java
+│   ├── VehicleNotFoundException.java
+│   ├── NoAvailableVehicleException.java
+│   └── InvalidSeatCountException.java
+  ├── data/
+  │   ├── vehicles.txt
+  │   ├── customers.txt
+  │   ├── rentals.txt
+  │   └── maintenance.txt</code></pre>
+      </div>
+  </section>
+
+            <section id="main-menu" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">08</p>
+                    <h2>Κεντρικό Μενού Εφαρμογής</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Η εφαρμογή λειτουργεί με menu-driven console περιβάλλον, ώστε ο χρήστης να μπορεί
+                        εύκολα να μετακινείται ανάμεσα στις βασικές λειτουργίες του συστήματος.
+                    </p>
+                    <pre class="structure-block"><code>Car Rental Management System
+1. Vehicle Management
+2. Customer Management
+3. Create Rental
+4. Print Invoice
+5. Show Vehicle Availability
+6. Show Customer History
+7. Show Vehicle History
+8. Print All Data
+9. Complete Rental
+0. Exit
+Choose option:</code></pre>
+                </div>
+            </section>
+
+            <section id="exceptions" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">09</p>
+                    <h2>Χειρισμός Εξαιρέσεων</h2>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card">
+                        <h3>Built-in exceptions</h3>
+                        <p>
+                            Χρησιμοποιούνται exceptions όπως <code>IOException</code>,
+                            <code>NumberFormatException</code> και <code>DateTimeParseException</code>
+                            για file handling και validation εισόδου.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Custom exceptions</h3>
+                        <p>
+                            Υλοποιήθηκαν custom exceptions όπως
+                            <code>DuplicateVehicleException</code>,
+                            <code>DuplicateCustomerException</code>,
+                            <code>CustomerNotFoundException</code>,
+                            <code>VehicleNotFoundException</code>,
+                            <code>NoAvailableVehicleException</code> και
+                            <code>InvalidSeatCountException</code>.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="rental-flow" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">10</p>
+                    <h2>Ροή Δημιουργίας Ενοικίασης</h2>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item card">
+                        <span class="timeline-step">1</span>
+                        <p>Επιλογή πελάτη με βάση ταυτότητα ή loyalty card.</p>
+                    </article>
+                    <article class="timeline-item card">
+                        <span class="timeline-step">2</span>
+                        <p>Εισαγωγή start date, duration, requested category και required seats.</p>
+                    </article>
+                    <article class="timeline-item card">
+                        <span class="timeline-step">3</span>
+                        <p>Επιλογή extra services όπως GPS, παιδικό κάθισμα και πρόσθετη ασφάλεια.</p>
+                    </article>
+                    <article class="timeline-item card">
+                        <span class="timeline-step">4</span>
+                        <p>Δυναμικός έλεγχος availability με βάση rentals και maintenance periods.</p>
+                    </article>
+                    <article class="timeline-item card">
+                        <span class="timeline-step">5</span>
+                        <p>Αν δεν υπάρχει exact match, προτείνονται ακριβότερες διαθέσιμες επιλογές ταξινομημένες από τη φθηνότερη προς την ακριβότερη.</p>
+                    </article>
+                    <article class="timeline-item card">
+                        <span class="timeline-step">6</span>
+                        <p>Γίνεται preview invoice, πιθανό redeem loyalty points και τελικό save της ενοικίασης.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="loyalty" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">11</p>
+                    <h2>Σύστημα Πιστότητας</h2>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card bullet-card">
+                        <h3>Κανόνες redemption</h3>
+                        <ul>
+                            <li>10 πόντοι = 1 ευρώ έκπτωση.</li>
+                            <li>Ελάχιστο redeem = 50 πόντοι.</li>
+                            <li>Το discount δεν μπορεί να ξεπερνά το κόστος της ενοικίασης.</li>
+                        </ul>
+                    </article>
+                    <article class="card bullet-card">
+                        <h3>Κανόνες earning</h3>
+                        <ul>
+                            <li>Οι νέοι πόντοι δίνονται μετά την ολοκλήρωση της ενοικίασης.</li>
+                            <li>Υπολογίζονται μόνο στο τελικό ποσό που πληρώθηκε.</li>
+                            <li>Άρα ο υπολογισμός γίνεται μετά την εφαρμογή του discount.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="bonus" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">12</p>
+                    <h2>Bonus: Χιλιόμετρα και Συντήρηση</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Κάθε όχημα διατηρεί συνολικά χιλιόμετρα και επόμενο maintenance threshold.
+                        Όταν μία active ενοικίαση ολοκληρωθεί, το σύστημα ενημερώνει τα χιλιόμετρα
+                        είτε με εκτίμηση <strong>125 km ανά ημέρα</strong> είτε με custom τιμή που
+                        εισάγει ο διαχειριστής.
+                    </p>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card">
+                        <h3>Αυτόματος προγραμματισμός συντήρησης</h3>
+                        <p>
+                            Αν το όχημα φτάσει ή ξεπεράσει το επόμενο όριο συντήρησης, δημιουργείται
+                            αυτόματα maintenance record διάρκειας δύο εργάσιμων ημερών.
+                            Το Σάββατο και η Κυριακή δεν μετρούν ως working days.
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3>Επίδραση στη διαθεσιμότητα</h3>
+                        <p>
+                            Η διαθεσιμότητα ενός οχήματος επηρεάζεται από δύο διαφορετικά φίλτρα:
+                            από τις περιόδους ενοικίασης και από τις περιόδους συντήρησης.
+                            Άρα ένα όχημα θεωρείται διαθέσιμο μόνο αν δεν υπάρχει overlap με κανένα
+                            από τα δύο.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="decisions" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">13</p>
+                    <h2>Σχεδιαστικές Αποφάσεις και Δυσκολίες</h2>
+                </div>
+                <div class="grid two-columns">
+                    <article class="card bullet-card">
+                        <h3>Σημαντικές αποφάσεις</h3>
+                        <ul>
+                            <li>Χρήση start inclusive / end exclusive για καθαρό date overlap logic.</li>
+                            <li>Διαχωρισμός managers από τη Main για καλύτερη οργάνωση.</li>
+                            <li>Χρήση txt αρχειών αντί για βάση δεδομένων λόγω προδιαγραφών εργασίας.</li>
+                            <li>Αποθήκευση IDs αντί για nested αντικείμενα.</li>
+                        </ul>
+                    </article>
+                    <article class="card bullet-card">
+                        <h3>Δυσκολίες</h3>
+                        <ul>
+                            <li>Σωστός έλεγχος overlap μεταξύ bookings και maintenance.</li>
+                            <li>Συνέπεια στη φόρτωση και επανασύνδεση object references.</li>
+                            <li>Υπολογισμός πόντων μόνο μετά το discount.</li>
+                            <li>Εξασφάλιση ότι οι ακριβότερες προτάσεις είναι ταξινομημένες σωστά.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="conclusion" class="section reveal">
+                <div class="section-heading">
+                    <p class="eyebrow">14</p>
+                    <h2>Συμπεράσματα</h2>
+                </div>
+                <div class="card">
+                    <p>
+                        Η εργασία οδήγησε στην υλοποίηση ενός πλήρους συστήματος διαχείρισης ενοικιάσεων
+                        αυτοκινήτων σε Java, με σωστή χρήση OOP, απλή αλλά λειτουργική αποθήκευση δεδομένων,
+                        validation, exception handling και bonus λογική συντήρησης.
+                    </p>
+                    <p>
+                        Το τελικό αποτέλεσμα είναι κατάλληλο για ακαδημαϊκή παρουσίαση, επειδή συνδυάζει
+                        καθαρό σχεδιασμό κώδικα, λειτουργικότητα, persistence σε txt/csv αρχεία και σαφή
+                        επίδειξη των βασικών εννοιών του αντικειμενοστραφούς προγραμματισμού.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

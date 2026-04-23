@@ -1,0 +1,11 @@
+// pseudo-pinakas vehicles: kathe grammh antistoixei se ena oxhma
+// stiles: type|registration|brand|model|year|seats|dailyRate|totalKilometers|nextMaintenanceThreshold
+
+EconomyCar|KAA111|Toyota|Yaris|2022|5|45.00|20550|30000
+EconomyCar|KBB222|Hyundai|i20|2021|4|45.00|10020|20000
+SUV|KCC333|Nissan|Qashqai|2023|5|70.00|24800|30000
+SUV|KDD444|Kia|Sorento|2020|7|70.00|40120|50000
+Convertible|KEE555|Mazda|MX-5|2022|2|90.00|12100|20000
+Convertible|KFF666|Mini|Cooper Cabrio|2021|4|90.00|8700|10000
+LuxuryCar|KGG777|Mercedes|E200|2024|5|120.00|30500|40000
+LuxuryCar|KHH888|BMW|520i|2023|4|120.00|9900|10000

@@ -1,0 +1,10 @@
+// pseudo-pinakas rentals: kathe grammh einai snapshot mias enoikiasis
+// stiles: rentalId|customerId|vehicleRegistration|startDate|endDate|durationDays|requestedCategory|requiredSeats|gps|childSeat|insurance|baseCost|gpsCost|childSeatCost|insuranceCost|discount|finalPaid|redeemedPoints|status
+
+R001|C001|KAA111|2026-03-01|2026-03-06|5|EconomyCar|4|true|false|false|225.00|25.00|0.00|30.00|0.00|280.00|0|COMPLETED
+R002|C002|KCC333|2026-04-18|2026-04-22|4|SUV|5|true|true|false|280.00|20.00|20.00|0.00|0.00|320.00|0|ACTIVE
+R003|C003|KFF666|2026-02-10|2026-02-17|7|Convertible|4|false|false|true|630.00|0.00|0.00|60.00|5.00|685.00|50|COMPLETED
+R004|C004|KGG777|2026-04-25|2026-04-29|4|LuxuryCar|4|true|false|true|480.00|20.00|0.00|30.00|0.00|530.00|0|ACTIVE
+R005|C005|KBB222|2026-01-15|2026-01-18|3|EconomyCar|4|false|true|false|135.00|0.00|20.00|0.00|0.00|155.00|0|COMPLETED
+R006|C001|KDD444|2026-04-10|2026-04-13|3|SUV|7|false|false|true|210.00|0.00|0.00|30.00|0.00|240.00|0|COMPLETED
+R007|C005|KHH888|2026-04-19|2026-04-24|5|LuxuryCar|4|true|false|true|600.00|25.00|0.00|30.00|0.00|655.00|0|ACTIVE
