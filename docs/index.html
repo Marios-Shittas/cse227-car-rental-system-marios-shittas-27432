@@ -81,7 +81,7 @@
                     <p>Κατηγορίες οχημάτων</p>
                 </article>
                 <article class="stat-card">
-                    <span class="stat-number">TXT / CSV</span>
+                    <span class="stat-number">TXT / PIPE</span>
                     <p>Αποθήκευση δεδομένων σε αρχεία</p>
                 </article>
                 <article class="stat-card">
@@ -140,6 +140,35 @@
                             <li>Χρήση LocalDate για όλες τις ημερομηνίες.</li>
                             <li>Χειρισμός λαθών με built-in και custom exceptions.</li>
                             <li>Υποστήριξη bonus λογικής για χιλιόμετρα και συντήρηση.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="grid three-columns">
+                    <article class="card bullet-card">
+                        <h3>Κατηγορίες και τιμές</h3>
+                        <ul>
+                            <li>EconomyCar: 45 ευρώ/ημέρα.</li>
+                            <li>SUV: 70 ευρώ/ημέρα.</li>
+                            <li>Convertible: 90 ευρώ/ημέρα.</li>
+                            <li>LuxuryCar: 120 ευρώ/ημέρα.</li>
+                        </ul>
+                    </article>
+                    <article class="card bullet-card">
+                        <h3>Θέσεις και έξτρα υπηρεσίες</h3>
+                        <ul>
+                            <li>EconomyCar 4-5, SUV 5-7, Convertible 2-4, LuxuryCar 4-5 θέσεις.</li>
+                            <li>GPS: 5 ευρώ ανά ημέρα.</li>
+                            <li>Child Seat: 20 ευρώ εφάπαξ.</li>
+                            <li>Additional Insurance: 30 ευρώ ανά περίοδο 5 ημερών.</li>
+                        </ul>
+                    </article>
+                    <article class="card bullet-card">
+                        <h3>Αρχικά δεδομένα ελέγχου</h3>
+                        <ul>
+                            <li>8 οχήματα, με 2 από κάθε κατηγορία.</li>
+                            <li>5 πελάτες με loyalty accounts.</li>
+                            <li>Έτοιμες ενοικιάσεις για έλεγχο ιστορικού και invoices.</li>
+                            <li>Έτοιμα maintenance records για έλεγχο του bonus availability.</li>
                         </ul>
                     </article>
                 </div>
@@ -393,9 +422,13 @@
 6. Show Customer History
 7. Show Vehicle History
 8. Print All Data
-9. Complete Rental
 0. Exit
-Choose option:</code></pre>
+Choose option:
+
+Rental Operations (option 3)
+1. Create Rental
+2. Complete Rental (Bonus)
+0. Back</code></pre>
                 </div>
             </section>
 
@@ -560,7 +593,7 @@ Choose option:</code></pre>
                     </p>
                     <p>
                         Το τελικό αποτέλεσμα είναι κατάλληλο για ακαδημαϊκή παρουσίαση, επειδή συνδυάζει
-                        καθαρό σχεδιασμό κώδικα, λειτουργικότητα, persistence σε txt/csv αρχεία και σαφή
+                        καθαρό σχεδιασμό κώδικα, λειτουργικότητα, persistence σε txt αρχεία pipe-separated και σαφή
                         επίδειξη των βασικών εννοιών του αντικειμενοστραφούς προγραμματισμού.
                     </p>
                 </div>
