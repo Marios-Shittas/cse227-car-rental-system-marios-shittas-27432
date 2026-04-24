@@ -12,10 +12,11 @@ import java.util.List;
 public class DataManager {
 
     // relative paths opws zitithikan sto assignment
-    private static final String VEHICLES_FILE = "data/vehicles.txt";
-    private static final String CUSTOMERS_FILE = "data/customers.txt";
-    private static final String RENTALS_FILE = "data/rentals.txt";
-    private static final String MAINTENANCE_FILE = "data/maintenance.txt";
+    private static final Path DATA_DIRECTORY = resolveDataDirectory();
+    private static final String VEHICLES_FILE = DATA_DIRECTORY.resolve("vehicles.txt").toString();
+    private static final String CUSTOMERS_FILE = DATA_DIRECTORY.resolve("customers.txt").toString();
+    private static final String RENTALS_FILE = DATA_DIRECTORY.resolve("rentals.txt").toString();
+    private static final String MAINTENANCE_FILE = DATA_DIRECTORY.resolve("maintenance.txt").toString();
 
     // constructor pou frontizei na yparxoun ta arxeia
     public DataManager() {
@@ -249,7 +250,7 @@ public class DataManager {
     // helper gia dimiourgia arxeiwn an leipoun
     private void ensureDataFilesExist() {
         try {
-            Files.createDirectories(Paths.get("data"));
+            Files.createDirectories(DATA_DIRECTORY);
             createFileIfMissing(VEHICLES_FILE);
             createFileIfMissing(CUSTOMERS_FILE);
             createFileIfMissing(RENTALS_FILE);
@@ -257,6 +258,30 @@ public class DataManager {
         } catch (IOException exception) {
             System.out.println("Provlima sti dimiourgia twn data files: " + exception.getMessage());
         }
+    }
+
+    // helper pou vriskei to swsto data folder eite trexei apo root eite apo src
+    private static Path resolveDataDirectory() {
+        Path cwd = Paths.get("").toAbsolutePath().normalize();
+        Path directData = cwd.resolve("data");
+        Path nestedData = cwd.resolve("CarRentalSystem").resolve("data");
+        Path parentData = cwd.resolve("..").normalize().resolve("data");
+
+        if ("src".equalsIgnoreCase(cwd.getFileName().toString())
+                && Files.exists(parentData) && Files.isDirectory(parentData)) {
+            return parentData;
+        }
+        if (Files.exists(directData) && Files.isDirectory(directData)) {
+            return directData;
+        }
+        if (Files.exists(nestedData) && Files.isDirectory(nestedData)) {
+            return nestedData;
+        }
+        if (Files.exists(parentData) && Files.isDirectory(parentData)) {
+            return parentData;
+        }
+
+        return directData;
     }
 
     // helper gia ena arxeio

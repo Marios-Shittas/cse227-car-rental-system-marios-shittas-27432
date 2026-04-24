@@ -3,4 +3,4 @@
 
 M001|KAA111|2026-03-10|2026-03-12|20050|Routine oil change and brake check|true
 M002|KDD444|2026-04-14|2026-04-16|40120|Automatic maintenance after rental R006|true
-M003|KBB222|2026-04-20|2026-04-22|10020|Scheduled maintenance after previous completed rental|false
+M003|KBB222|2026-04-20|2026-04-22|10020|Scheduled maintenance after previous completed rental|true

@@ -1,8 +1,8 @@
 // pseudo-pinakas customers: kathe grammh antistoixei se enan pelati
 // stiles: customerId|fullName|identityCard|address|phone|email|creditCard|loyaltyCard|points
 
-C001|Marios Shittas|ID27432|12 Alonissou Street Limassol|97728492|mariosshittas@gmail.com|4111111111111111|L001|120
-C002|Maria Georgiou|ID12345|8 Makariou Avenue Limassol|99223344|maria@example.com|4222222222222222|L002|60
-C003|Eleni Christou|ID2456|5 Demokratias Street Larnaca|99334455|eleni@example.com|4333333333333333|L003|85
-C004|Petros Ioannou|ID34567|21 Griva Digeni Paphos|99445566|petros@example.com|4444444444444444|L004|15
-C005|Sofia Michael|ID45678|44 Agiou Andreou Limassol|99556677|sofia@example.com|4555555555555555|L005|220
+C001|Marios Shittas|ID27432|12 Alonissou Street Limassol|97728492|mariosshittas@gmail.com|4111111111111111|L001|490
+C002|Maria Georgiou|ID12345|8 Makariou Avenue Limassol|99223344|maria@example.com|4222222222222222|L002|0
+C003|Eleni Christou|ID2456|5 Demokratias Street Larnaca|99334455|eleni@example.com|4333333333333333|L003|685
+C004|Petros Ioannou|ID34567|21 Griva Digeni Paphos|99445566|petros@example.com|4444444444444444|L004|0
+C005|Sofia Michael|ID45678|44 Agiou Andreou Limassol|99556677|sofia@example.com|4555555555555555|L005|155
